@@ -28,8 +28,8 @@ app.get('/shirts', (req,res)=>{
     })
 })
 
-app.get('/cart', (req,res)=>{
-  db.collection('cart').find({}).toArray((err,result)=>{
+app.post('/cart', (req,res)=>{
+  db.collection('cart').insert(req.body,(err,result)=>{
           if(err) throw err;
           res.send(result)
   })
