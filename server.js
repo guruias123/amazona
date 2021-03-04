@@ -34,6 +34,14 @@ app.post('/cart', (req,res)=>{
           res.send(result)
   })
 })
+ 
+
+app.get('/cart1',(req,res)=>{
+  db.collection('cart').find({}).toArray((err,result)=>{
+    if(err) throw err;
+    res.send(result);
+  })
+})
 
 app.get('/shirts/:id',(req,res) =>{
   var id = req.params.id
