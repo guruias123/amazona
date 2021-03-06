@@ -43,6 +43,21 @@ app.get('/cart1',(req,res)=>{
   })
 })
 
+app.delete('/cart1',(req,re)=>{
+  db.collection('cart').find({}.toArray((err,result)=>{
+    if(err) throw err;
+    res.send(result);
+  }))
+})
+
+app.delete('/deleteUser',(req,res) => {
+  var id = req.params.id
+  db.collection('cart').remove({_id:id},(err,result)=>{
+      if(err) throw err;
+      res.status(200).send("Data Removed")
+  })
+})
+
 app.get('/shirts/:id',(req,res) =>{
   var id = req.params.id
   db.collection('shirts').find({_id:id}).toArray((err,result) => {
