@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 //mongodb+srv://venky:venky123@cluster0.bxnfz.mongodb.net/amazon?retryWrites=true&w=majority
 // mongodb://localhost:27017
-const mongourl = "mongodb+srv://venky:venkateshA1#@cluster0.bxnfz.mongodb.net/amazon?retryWrites=true&w=majority";
+const mongourl = "mongodb+srv://venky:venkateshA1@cluster0.bxnfz.mongodb.net/amazon?retryWrites=true&w=majority";
 let db;
 
 app.use(cors());
